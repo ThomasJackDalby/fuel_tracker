@@ -21,8 +21,7 @@ app.use(function (req, res, next) {
 });
 
 logger.info("Launching application from "+__dirname)
-app.use('/', express.static(path.join(__dirname, 'public')))
-app.use(express.directory(__dirname + '/public'));
+app.use('', express.static(path.join(__dirname, 'public')))
 app.use(passport.initialize());
 app.use('/api', router);
 app.use(cookieParser())
