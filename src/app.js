@@ -7,6 +7,7 @@ const auth = require('./auth.js');
 const router = express.Router()
 const logger = logging.createLogger("app");
 const cookieParser = require('cookie-parser')
+const path = require('path');
 const app = express();
 
 // Configure app
