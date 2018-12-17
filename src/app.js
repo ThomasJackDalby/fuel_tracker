@@ -20,11 +20,12 @@ app.use(function (req, res, next) {
     next();
 });
 
-logger.info("Launching application from "+__dirname)
-app.use('', express.static(path.join(__dirname, 'public')))
+const hostPath = path.join(__dirname, 'public');
+logger.info("Launching application from ["+hostPath+"]");
+app.use('', express.static(hostPath));
 app.use(passport.initialize());
 app.use('/api', router);
-app.use(cookieParser())
+app.use(cookieParser());
 
 logger.info("Starting server");
 logger.info("Registering [GET /refuels]...");
