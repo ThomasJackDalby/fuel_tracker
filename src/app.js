@@ -24,10 +24,11 @@ app.use('/api', router);
 app.use(cookieParser())
 
 logger.info("Starting server");
-
+logger.info("Registering [GET /refuels]...");
 router.get("/refuels", auth.optional, (req, res) => {
 	  getItems(req, res, datastore.getRefuels);
 });
+logger.info("Registering [POST /refuels]...");
 router.post("/refuels", auth.optional, async (req, res) => {
     try {
         let refuel = {
@@ -47,7 +48,7 @@ router.post("/refuels", auth.optional, async (req, res) => {
         logger.error(err);
     }
 });
-
+logger.info("Registering [POST /login]...");
 router.post('/login', auth.optional, (req, res, next) => {
     const { body } = req;
     if (!body.username) {
@@ -78,6 +79,7 @@ router.post('/login', auth.optional, (req, res, next) => {
         return res.sendStatus(400).info;
     })(req, res, next);
 });
+logger.info("Complete.");
 
 function getItems(req, res, getter) {
     return datastore.initialise()
