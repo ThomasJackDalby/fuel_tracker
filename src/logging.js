@@ -1,11 +1,16 @@
 const bunyan = require("bunyan");
+const fs = require('fs');
+const loggingFolderPath = "./logs";
+if (!fs.existsSync(loggingFolderPath)){
+    fs.mkdirSync(loggingFolderPath);
+}
 
 function LoggerConfig(name) {
 	this.name = name,
 	this.level = "debug",
 		this.streams = [{
 			type: "rotating-file",
-			path: "./logs/log.json",
+			path: "./logs/log",
 		}, {
 			stream: process.stdout
 		}]
