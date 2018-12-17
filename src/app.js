@@ -26,11 +26,13 @@ app.use(cookieParser())
 logger.info("Starting server");
 logger.info("Registering [GET /refuels]...");
 router.get("/refuels", auth.optional, (req, res) => {
-	  getItems(req, res, datastore.getRefuels);
+    logger.info("Request for [GET /refuels]...");
+    getItems(req, res, datastore.getRefuels);
 });
 logger.info("Registering [POST /refuels]...");
 router.post("/refuels", auth.optional, async (req, res) => {
     try {
+        logger.info("Request for [POST /login]...");
         let refuel = {
             milage: parseInt(req.body.milage),
             pricePerLitre: parseFloat(req.body.ppl),
@@ -50,6 +52,7 @@ router.post("/refuels", auth.optional, async (req, res) => {
 });
 logger.info("Registering [POST /login]...");
 router.post('/login', auth.optional, (req, res, next) => {
+    logger.info("Request for [POST /login]...");
     const { body } = req;
     if (!body.username) {
         return res.sendStatus(422).json({
