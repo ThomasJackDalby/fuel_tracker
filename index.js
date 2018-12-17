@@ -7,6 +7,6 @@ process.on('uncaughtException', function (err) {
     console.log("Node NOT Exiting...");
 });
 
-const port = 80;
+const port = process.env.PORT || 1337;
 app.set('port', port);
 server.listen(port);
