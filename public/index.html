@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="/styles/darkly.bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body>
+    <h1 class="display-2">Fuel Tracker</h1>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/refuel.html">Refuel</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/login.html">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h3>Cumlative Milage</h3>
+        <canvas id="milage_chart" width="400" height="400"></canvas>
+    </div>
+    <div class="container">
+        <h3>Data</h3>
+        <table id="milage_table" class="table"></table>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script src="/js/charts/colours.js"></script>
+    <script src="/js/tables/milage_table.js"></script>
+    <script src="/js/charts/milage_chart.js"></script>
+    <script src="/js/index.js"></script>
+</body>
+</html>
