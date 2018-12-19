@@ -30,10 +30,10 @@ async function readEnvironmentValues() {
     new Promise((resolve, reject) => {
         try {
             let secrets = {
-                host: process.env.host,
-                user: process.env.user,
-                password: process.env.password,
-                database: process.env.database
+                host: process.env.DATABASE_HOST,
+                user: process.env.DATABASE_USER,
+                password: process.env.DATABASE_PASSWORD,
+                database: process.env.DATABASE_NAME
             }
             resolve(secrets);
         }
