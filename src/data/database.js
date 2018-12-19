@@ -46,7 +46,10 @@ async function readEnvironmentValues() {
 }
 async function initialise() {
     return readEnvironmentValues()
-        .then(config => connection = mysql.createConnection(config));
+        .then(config => {
+            logger.info("Config host: " + config.host);
+            connection = mysql.createConnection(config)
+        });
 }
 async function getTableItems(tableName) {
     return executeQuery("SELECT * FROM " + tableName)
