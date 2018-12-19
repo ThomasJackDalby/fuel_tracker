@@ -20,9 +20,10 @@ app.use(function (req, res, next) {
     next();
 });
 
+logger.info("Launching application from ["+__dirname+"]");
 const hostPath = path.join(__dirname, 'public');
-logger.info("Launching application from ["+hostPath+"]");
-app.use('', express.static(hostPath));
+logger.info("Hosting public folder from from ["+hostPath+"]");
+app.use('/public', express.static(hostPath));
 app.use(passport.initialize());
 app.use('/api', router);
 app.use(cookieParser());

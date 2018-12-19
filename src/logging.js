@@ -21,7 +21,7 @@ module.exports.createLogger = function (name) {
 };
 module.exports.requestLogger = function (logger) {
 	return (req, res, next) => {
-		logger.info("[" + req.ip + "] for [" + req.originalUrl + "]");
+		logger.info("Request [" + req.ip + "] for [" + req.originalUrl + "]");
 		next();
 	}
 }
