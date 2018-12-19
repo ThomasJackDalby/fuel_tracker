@@ -10,11 +10,6 @@ const cookieParser = require('cookie-parser')
 const path = require('path');
 const app = express();
 
-
-logger.info("The virtual path is..." + process.env.virtualDirPath);
-
-
-
 // Configure app
 app.use(logging.requestLogger(logger));
 app.use(bodyParser.urlencoded({ extended: true }));

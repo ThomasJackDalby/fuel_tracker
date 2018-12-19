@@ -44,9 +44,7 @@ async function readEnvironmentValues() {
     });
 }
 async function initialise() {
-    return loadSecretsFile()
-        .catch(err => readEnvironmentValues())
-        .catch()
+    return readEnvironmentValues()
         .then(config => connection = mysql.createConnection(config));
 }
 async function getTableItems(tableName) {
