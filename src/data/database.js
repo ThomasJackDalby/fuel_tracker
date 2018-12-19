@@ -38,6 +38,7 @@ async function readEnvironmentValues() {
             resolve(secrets);
         }
         catch (err) {
+            logger.error("Failed to get environment variables... host was "+process.env.DATABASE_HOST);
             reject(err);
         }
     });
