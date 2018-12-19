@@ -31,6 +31,11 @@ app.use(cookieParser());
 
 logger.info("Starting server");
 logger.info("Registering [GET /refuels]...");
+
+router.get("/debug", auth.optional, (req, res) => {
+    res.json({data: new Date()});
+});
+
 router.get("/refuels", auth.optional, (req, res) => {
     logger.info("Request for [GET /refuels]...");
     getItems(req, res, datastore.getRefuels);
