@@ -27,7 +27,7 @@ async function loadSecretsFile() {
     });
 }
 async function readEnvironmentValues() {
-    new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         try {
             let secrets = {
                 host: process.env.DATABASE_HOST,
@@ -35,7 +35,6 @@ async function readEnvironmentValues() {
                 password: process.env.DATABASE_PASSWORD,
                 database: process.env.DATABASE_NAME
             }
-            logger.info("host:" + process.env.DATABASE_HOST);
             resolve(secrets);
         }
         catch (err) {
