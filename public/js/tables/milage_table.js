@@ -17,22 +17,27 @@ function MilageTable(id) {
     }
 
     this.loadData = function (data) {
-        console.log(data);
         this.table.rows.length = 0;
         for (let i = 0; i < data.length; i++) {
             let d = data[data.length - i - 1];
             let row = this.tableBody.insertRow(i);
-            appendCell(row, formatDate(new Date(d.date)));
-            appendCell(row, d.milage);
-            appendCell(row, d.amount);
-            appendCell(row, d.pricePerLitre);
-            appendCell(row, d.totalCost);
+            appendTextCell(row, formatDate(new Date(d.date)));
+            appendTextCell(row, d.milage);
+            appendTextCell(row, d.amount);
+            appendTextCell(row, d.pricePerLitre);
+            appendTextCell(row, d.totalCost);
+            appendButtonCell(row);
         }
     }
 
-    function appendCell(row, value) {
+    function appendTextCell(row, value) {
         let cell = row.insertCell(row.cells.length);
         cell.innerHTML = value;
+    }
+    function appendButtonCell(row) {
+        let cell = row.insertCell(row.cells.length);
+        let button = document.createElement("button");
+        cell.innerHTML = button;
     }
     function formatDate(date) {
         var monthNames = [

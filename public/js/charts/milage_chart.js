@@ -62,7 +62,6 @@ function MilageChart(id) {
     });
 
     this.loadData = function(data) {
-        console.log(data)
         let labels = data.map(r => Date.parse(r.date));
         this.chart.data.labels.length = 0;
         labels.forEach(label => this.chart.data.labels.push(label));
