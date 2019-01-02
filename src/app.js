@@ -24,7 +24,7 @@ app.use(passport.initialize());
 app.use('/api', router);
 app.use(cookieParser());
 
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, '../public')))
 
 logger.info("Starting server");
 logger.info("Registering [GET /refuels]...");
