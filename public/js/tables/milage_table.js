@@ -36,8 +36,11 @@ function MilageTable(id) {
     }
     function appendButtonCell(row) {
         let cell = row.insertCell(row.cells.length);
-        let button = document.createElement("button");
-        cell.innerHTML = button;
+        let button = document.createElement('input');
+        button.type = "button";
+        // button.value = "test";
+        // button.onclick = (function(entry) {return function() {chooseUser(entry);}})(entry);
+        cell.appendChild(button);
     }
     function formatDate(date) {
         var monthNames = [
